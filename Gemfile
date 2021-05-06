@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem "aws-sdk-s3"
 gem "cancancan"
 gem "rolify"
+gem "devise"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
