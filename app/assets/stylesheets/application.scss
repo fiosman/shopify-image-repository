@@ -1,2 +1,9 @@
 @import "bootstrap/scss/bootstrap";
 @import "home";
+@import "navbar";
+
+#user_username,
+#user_password,
+#user_password_confirmation {
+  display: block;
+}

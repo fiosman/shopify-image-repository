@@ -7,6 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
+        <li class="nav-link" id="logged-in-label"> 
+          Currently logged in as <span class="username-label"><%= current_user.username %></span>
+        </li>
         <%= link_to "Sign out", destroy_user_session_url, method: :delete, class: "nav-link" %>
       <% else %>
         <%= link_to "Sign in", new_user_session_url, class: "nav-link" %>
