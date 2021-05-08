@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_130916) do
+ActiveRecord::Schema.define(version: 2021_05_08_031751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "image_id", null: false
+    t.text "body", null: false
+    t.integer "rating", default: 1, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["image_id"], name: "index_comments_on_image_id"
+    t.index ["rating"], name: "index_comments_on_rating"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "encrypted_password", default: "", null: false

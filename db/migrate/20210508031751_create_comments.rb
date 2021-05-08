@@ -11,5 +11,6 @@ class CreateComments < ActiveRecord::Migration[6.0]
 
     add_index :comments, :user_id
     add_index :comments, :image_id
+    add_index :comments, :rating
   end
 end
