@@ -1,6 +1,33 @@
 @import "bootstrap/scss/bootstrap";
 @import "home";
 @import "navbar";
+@import "user";
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+p,
+a,
+img,
+form,
+label,
+embed,
+figure,
+figcaption,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+li {
+  list-style-type: none;
+}
 
 #user_username,
 #user_password,

@@ -1,10 +1,9 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation">
-    <ul>
-      <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+  <% resource.errors.full_messages.each do |message| %>
+    <li class="sign-up-errors"><%= message %></li>
+  <% end %>
+</ul>
+</div>
+<% elsif flash[:alert] %>
+  <li class="sign-in-errors"><%= flash[:alert] %></li>
 <% end %>
-
