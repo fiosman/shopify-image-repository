@@ -14,6 +14,11 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+    @image = Image.find(params[:id])
+
+    if @image.destroy
+      redirect_to root_url
+    end
   end
 
   private

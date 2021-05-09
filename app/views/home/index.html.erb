@@ -1,2 +1,34 @@
-<%= render "images/form" %>
-<h1>This is the index</h1>
+<%= render "images/form" if current_user %>
+<hr>
+<div class="container-fluid">
+  <div class="row">
+    <% if Image.all.count > 0 %>
+      <% Image.sort_images.each do |image| %>
+        <div class="col-sm-3">
+          <div class="card" style="width: 21rem;">
+            <%= link_to image_url(image.id) do %>
+              <%= image_tag url_for(image.photo), class: "card-img-top" %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= image.title %></h5>
+              <p class="card-text"><%= image.body %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Posted by <%= User.find_by_id(image.user_id).username %></li>
+              <li class="list-group-item">Uploaded on <%= image.created_at %></li>
+              <% if image.comments.count > 0 %>
+                <li class="list-group-item">Rated <%= image.average_rating %>/5</li>
+                <li class="list-group-item">Has <%= image.comments.count %> comments</li>
+              <% else%>
+                <li class="list-group-item">Not yet rated</li>
+                <li class="list-group-item">No comments yet</li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <h3> Nothing posted yet... </h3>
+    <%end %>
+  </div>
+</div>

@@ -1,19 +1,28 @@
-<div class="card show-card" style="width: 18rem;">
+<div class="card show-card" style="width: 21rem;">
   <img class="card-img-top" src='<%= url_for(@image.photo) %>' alt="user image">
   <div class="card-body">
     <h5 class="card-title"><%= @image.title %></h5>
     <p class="card-text"><%= @image.body %></p>
   </div>
   <ul class="list-group list-group-flush">
+    <li class="list-group-item"> Posted by <%= User.find_by_id(@image.user_id).username %></li>
+    <li class="list-group-item"> Posted on <%= @image.created_at %></li>
     <% if @image.comments.length > 0 %>
       <li class="list-group-item">Rated <%= @image.average_rating %>/5 based on <%= @image.comments.length %> comments</li>
     <% else %>
       <li class="list-group-item"> This image has not been rated yet</li>
     <%end %>
+    <% if current_user == User.find_by_id(@image.user_id) %>
+      <li class="list-group-item"> <%= button_to "Delete", image_path(id: @image.id), method: :delete, class: "btn btn-danger" %></li>
+    <%end %>
   </div>
 </div>
-<%= render "comments/form", image_id: params[:id] %>
-<h2 class="comment-header">See what others are saying...</h2>
+<%= render "comments/form", image_id: params[:id] if current_user %>
+<% if @image.comments.count > 0 %>
+  <h2 class="comment-header">See what others are saying...</h2>
+<% else %>
+  <h2 class="comment-header">No comments yet</h2>
+<%end %>
 <div class="comments-container">
   <ul class="comments-list">
     <% @image.comments.each do |comment| %>

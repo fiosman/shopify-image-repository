@@ -5,6 +5,10 @@ class Image < ApplicationRecord
 
   validates :body, :title, presence: true
 
+  def self.sort_images
+    Image.all.order(created_at: :desc)
+  end
+
   def average_rating
     self.comments.count > 0 ? self.comments.average(:rating).to_f.round : 0
   end
