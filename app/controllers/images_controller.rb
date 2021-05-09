@@ -4,7 +4,8 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to image_url(@image)
     else
-      flash.now[:alert] = @image.errors.full_messages
+      flash[:alert] = @image.errors.full_messages
+      redirect_to request.referrer
     end
   end
 

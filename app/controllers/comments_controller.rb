@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to request.referrer
     else
-      flash.now[:alert] = @comment.errors.full_messages
-      print flash[:alert]
+      flash[:alert] = @comment.errors.full_messages
+      redirect_to request.referrer
     end
   end
 
