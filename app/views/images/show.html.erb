@@ -5,6 +5,11 @@
     <p class="card-text"><%= @image.body %></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Rating</li>
+    <% if @image.comments.length > 0 %>
+      <li class="list-group-item">Rated <%= @image.average_rating %>/5 based on <%= @image.comments.length %> comments</li>
+    <% else %>
+      <li class="list-group-item"> This image has not been rated yet</li>
+    <%end %>
   </div>
 </div>
+<%= render "comments/form", image_id: params[:id] %>
