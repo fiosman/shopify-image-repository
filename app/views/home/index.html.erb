@@ -23,6 +23,9 @@
                 <li class="list-group-item">Not yet rated</li>
                 <li class="list-group-item">No comments yet</li>
               <% end %>
+              <% if current_user == User.find_by_id(image.user_id) %>
+                <li class="list-group-item"> <%= button_to "Delete", image_path(id: image.id), method: :delete, class: "btn btn-danger" %></li>
+              <%end %>
             </ul>
           </div>
         </div>

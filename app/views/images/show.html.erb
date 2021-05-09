@@ -17,7 +17,7 @@
     <%end %>
   </div>
 </div>
-<%= render "comments/form", image_id: params[:id] if current_user %>
+<%= render "comments/form", image_id: params[:id] if current_user && current_user.id != @image.user_id %>
 <% if @image.comments.count > 0 %>
   <h2 class="comment-header">See what others are saying...</h2>
 <% else %>
