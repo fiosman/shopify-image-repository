@@ -6,10 +6,13 @@ The vast majority of the work was completed on Sunday, May 9th, 2021. I have a f
 
 ## How to use the application
 
-1. This application uses Ruby therefore it must be installed on your system.
-2. Install bundler using gem install bundler
-3. cd into the root of the application and bundle install to install all the gems required for the project
-4. In your terminal, run rails s to start the server and proceed as directed to http://localhost:3000/
+NOTE: This application uses Ruby on Rails. Ruby will need to be installed which can be found [here] (https://www.ruby-lang.org/en/downloads/)
+
+0. Clone the application to save to your machine.
+1. Change directories to the root path of the application in your CLI.
+2. In your CLI, install bundler using `gem install bundler`.
+3. In your CLI, cd into the root of the application and `bundle install` to install all the gems required for the project.
+4. In your CLI, while in the root of the application, run `rails s` to start the server and proceed as directed to http://localhost:3000/.
 
 ## Technologies Used
 
