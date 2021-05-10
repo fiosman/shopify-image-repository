@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :rememberable, :authentication_keys => [:username]
   validates :username, presence: true, uniqueness: true
 
-  has_many :images
-  has_many :comments
+  has_many :images, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def email_required?
     false
