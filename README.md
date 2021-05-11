@@ -13,7 +13,7 @@ NOTE: This application uses Ruby on Rails. Ruby will need to be installed which 
 3. In your CLI, install bundler using `gem install bundler`.
 4. In your CLI, cd into the root of the application and `bundle install` to install all the gems required for the project.
 5. In your CLI, while in the root of the application, run `rails s` to start the server and proceed as directed to http://localhost:3000/.
-6. Tests are included in the `spec` folder within the application.
+6. Tests are included in the `spec` folder within the application. To run all the tests at once, ensure you are cd'd into the root path of the application and execute in cli `bundle exec rspec`
 
 ## Technologies Used
 
