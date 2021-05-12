@@ -6,7 +6,7 @@ The vast majority of the work was completed on Sunday, May 9th, 2021. I have a f
 
 ## How to use the application
 
-The application is live aand can be found at http://imagez.herokuapp.com/
+The application is live and can be found at http://imagez.herokuapp.com/. Sign up, upload an image. Error handling is functional. You cannot comment or rate your own image.
 
 ## Technologies Used
 
