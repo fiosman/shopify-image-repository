@@ -19,7 +19,7 @@ The application is live and can be found at http://imagez.herokuapp.com/. Sign u
 
 ## Features
 
-1. Full authentication using Devise. I reconfigured it to use username for sign up/log in instead of email, for the purposes of this application since it was not deployed to production.
+1. Full authentication using Devise. I reconfigured it to use username for sign up/log in instead of email, for the purposes of this application.
 2. Signed in users are able to upload images to S3 service using form data, comment and leave ratings on other users' images, and delete their own images.
 
 ## Future Work
