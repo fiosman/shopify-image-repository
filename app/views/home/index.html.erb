@@ -4,8 +4,8 @@
   <div class="row">
     <% if Image.all.count > 0 %>
       <% Image.sort_images.each do |image| %>
-        <div class="col-sm-3">
-          <div class="card" style="width: 21rem;">
+        <div class="col-xs-3">
+          <div class="card home" style="width: 21rem;">
             <%= link_to image_url(image.id) do %>
               <%= image_tag url_for(image.photo), class: "card-img-top" %>
             <% end %>
